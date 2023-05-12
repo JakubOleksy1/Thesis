@@ -4,6 +4,13 @@ CREATE TABLE `users` (
   `created_at` timestamp
 );
 
+CREATE TABLE `vendmachine` (
+  `id` integer PRIMARY KEY AUTO_INCREMENT,
+  `status` bool,
+  `game_id` integer,
+  `created_at` timestamp
+);
+
 CREATE TABLE `game` (
   `id` integer PRIMARY KEY AUTO_INCREMENT,
   `user_id` integer,
@@ -13,13 +20,7 @@ CREATE TABLE `game` (
   `created_at` timestamp
 );
 
-CREATE TABLE `vendmachine` (
-  `id` integer PRIMARY KEY AUTO_INCREMENT,
-  `game_id` integer,
-  `status` bool,
-  `created_at` timestamp
-);
-
 ALTER TABLE `game` ADD FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 
-ALTER TABLE `game` ADD FOREIGN KEY (`id`) REFERENCES `vendmachine` (`game_id`);
+ALTER TABLE `vendmachine` ADD FOREIGN KEY (`game_id`) REFERENCES `game` (`id`);
+
