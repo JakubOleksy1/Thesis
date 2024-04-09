@@ -295,6 +295,26 @@ def check_code():
 
 
 
+@app.route("/delete_records", methods=["DELETE"])
+def delete_records():
+    try:
+        # Filter records where give_prize is false and is_used is true
+        records_to_delete = Action.query.filter((Action.give_prize == False) | (Action.is_used == True)).all()
+
+
+        print("Records to delete:", records_to_delete)  # Add this line for debugging
+
+        # Delete the filtered records
+        for record in records_to_delete:
+            db.session.delete(record)
+
+        db.session.commit()
+
+        return jsonify({"message": "Records deleted successfully"})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
 
 @app.route("/action/update_status/<code>", methods=["PUT"])
 def update_code_status(code):
