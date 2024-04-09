@@ -34,7 +34,7 @@ class DrawView extends View {
             case 6:
                 return Color.MAGENTA;
             case 7:
-                return Color.DKGRAY;
+                return Color.WHITE;
             default:
                 return Color.TRANSPARENT;
         }
@@ -42,25 +42,25 @@ class DrawView extends View {
     }
 
     private void DrawMatrix(BasicBlock[][] matrix, Canvas canvas) {
-        for (int i = 0; i < 24; i++) {
-            for (int j = 0; j < 20; j++) {
+        for (int i = 0; i < 20; i++) {
+            for (int j = 0; j < 14; j++) {
                 if (matrix[i][j].state == BasicBlockState.ON_EMPTY)
                     continue;
 
                 int color = this.getBlockColorCode(matrix[i][j].colour);
                 Paint p = new Paint();
                 p.setColor(color);
-                canvas.drawRect(42 + j * 50, yOffset + i * 50 + 2, 88 + j * 50, yOffset + (i + 1) * 50 - 2, p);
+                canvas.drawRect(52 + j * 50, yOffset + i * 50 + 2, 98 + j * 50, yOffset + (i + 1) * 50 - 2, p);
             }
         }
     }
 
     private void Clear(BasicBlock[][] matrix, Canvas canvas) {
         Paint p = new Paint();
-        p.setColor(Color.WHITE);
-        for (int i = 0; i < 24; i++) {
-            for (int j = 0; j < 20; j++) {
-                canvas.drawRect(42 + j * 50, yOffset + i * 50 + 2, 88 + j * 50, yOffset + (i + 1) * 50 - 2, p);
+        p.setColor(Color.BLACK);
+        for (int i = 0; i < 20; i++) {
+            for (int j = 0; j < 14; j++) {
+                canvas.drawRect(52 + j * 50, yOffset + i * 50 + 2, 98 + j * 50, yOffset + (i + 1) * 50 - 2, p);
             }
         }
     }
@@ -70,27 +70,27 @@ class DrawView extends View {
             int color = this.getBlockColorCode(block.colour);
             Paint p = new Paint();
             p.setColor(color);
-            canvas.drawRect(42 + block.coordinate.x * 50, yOffset + block.coordinate.y * 50 + 2, 88 + block.coordinate.x * 50, yOffset + (block.coordinate.y + 1) * 50 - 2, p);
+            canvas.drawRect(52 + block.coordinate.x * 50, yOffset + block.coordinate.y * 50 + 2, 98 + block.coordinate.x * 50, yOffset + (block.coordinate.y + 1) * 50 - 2, p);
 
         }
     }
 
     private void Boundary(Canvas canvas) {
-        paint.setColor(Color.BLACK);
+        paint.setColor(Color.WHITE);
         paint.setStrokeWidth(5f);
-        canvas.drawLine(40, yOffset, 40, yOffset + 1200, paint);
-        canvas.drawLine(40, yOffset, 1040, yOffset, paint);
-        canvas.drawLine(1040, yOffset, 1040, yOffset + 1200, paint);
-        canvas.drawLine(1040, yOffset + 1200, 40, yOffset + 1200, paint);
+        canvas.drawLine(50, yOffset, 50, yOffset + 1000, paint);
+        canvas.drawLine(50, yOffset, 750, yOffset, paint);
+        canvas.drawLine(750, yOffset, 750, yOffset + 1000, paint);
+        canvas.drawLine(750, yOffset + 1000, 50, yOffset + 1000, paint);
     }
 
     private void grid(Canvas canvas) {
         paint.setStrokeWidth(2f);
-        for (int i = 90; i < 1040; i = i + 50) {
-            canvas.drawLine(i, yOffset, i, yOffset + 1200, paint);
+        for (int i = 100; i < 750; i = i + 50) {
+            canvas.drawLine(i, yOffset, i, yOffset + 1000, paint);
         }
-        for (int j = 50; j < 1200; j = j + 50) {
-            canvas.drawLine(40, yOffset + j, 1040, yOffset + j, paint);
+        for (int j = 50; j < 1000; j = j + 50) {
+            canvas.drawLine(50, yOffset + j, 750, yOffset + j, paint);
         }
     }
 
@@ -98,7 +98,7 @@ class DrawView extends View {
         Paint paint = new Paint();
         paint.setColor(Color.TRANSPARENT);
         canvas.drawRect(0, 100, 200, 200, paint);
-        paint.setColor(Color.BLACK);
+        paint.setColor(Color.WHITE);
         paint.setTextSize(100);
         canvas.drawText(Integer.toString(score), 80, 170, paint);
 
@@ -107,7 +107,7 @@ class DrawView extends View {
     @Override
     public void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        paint.setColor(Color.BLACK);
+        paint.setColor(Color.WHITE);
         paint.setStrokeWidth(5f);
         Boundary(canvas);
         grid(canvas);
@@ -120,9 +120,9 @@ class DrawView extends View {
             Paint paint = new Paint();
             DrawMatrix(gameState.board, canvas);
             DrawTetramino(gameState.falling, canvas);
-            paint.setColor(Color.BLACK);
-            paint.setTextSize(200);
-            canvas.drawText(getResources().getString(R.string.game_over), 60, 800, paint);
+            paint.setColor(Color.WHITE);
+            paint.setTextSize(100);
+            canvas.drawText(getResources().getString(R.string.game_over), 150, 800, paint);
             PrintScore(gameState.score, canvas);
         }
 

@@ -30,64 +30,64 @@ class Tetramino {
         switch (type) {
             case SQUARE_SHAPED:
                 coordinates = new Coordinate[]{
-                        new Coordinate(0, 10),
-                        new Coordinate(1, 10),
-                        new Coordinate(1, 11),
-                        new Coordinate(0, 11)
+                        new Coordinate(0, 7),
+                        new Coordinate(1, 7),
+                        new Coordinate(1, 8),
+                        new Coordinate(0, 8)
                 };
                 blocks = this.blocksGenerator(tetraId, 1, coordinates);
                 break;
             case INV_L_SHAPED:
                 coordinates = new Coordinate[]{
-                        new Coordinate(0, 10),
-                        new Coordinate(0, 11),
-                        new Coordinate(1, 10),
-                        new Coordinate(2, 10)
+                        new Coordinate(0, 7),
+                        new Coordinate(0, 8),
+                        new Coordinate(1, 7),
+                        new Coordinate(2, 7)
                 };
                 blocks = this.blocksGenerator(tetraId, 2, coordinates);
                 break;
             case L_SHAPED:
                 coordinates = new Coordinate[]{
-                        new Coordinate(0, 11),
-                        new Coordinate(0, 10),
-                        new Coordinate(1, 11),
-                        new Coordinate(2, 11)
+                        new Coordinate(0, 8),
+                        new Coordinate(0, 7),
+                        new Coordinate(1, 8),
+                        new Coordinate(2, 8)
                 };
                 blocks = this.blocksGenerator(tetraId, 3, coordinates);
                 break;
             case T_SHAPED:
                 coordinates = new Coordinate[]{
-                        new Coordinate(1, 10),
-                        new Coordinate(0, 10),
-                        new Coordinate(1, 11),
-                        new Coordinate(2, 10)
+                        new Coordinate(1, 7),
+                        new Coordinate(0, 7),
+                        new Coordinate(1, 8),
+                        new Coordinate(2, 7)
                 };
                 blocks = this.blocksGenerator(tetraId, 4, coordinates);
                 break;
             case Z_SHAPED:
                 coordinates = new Coordinate[]{
-                        new Coordinate(1, 11),
-                        new Coordinate(1, 10),
-                        new Coordinate(0, 10),
-                        new Coordinate(2, 11)
+                        new Coordinate(1, 8),
+                        new Coordinate(1, 7),
+                        new Coordinate(0, 7),
+                        new Coordinate(2, 8)
                 };
                 blocks = this.blocksGenerator(tetraId, 5, coordinates);
                 break;
             case INV_Z_SHAPED:
                 coordinates = new Coordinate[]{
-                        new Coordinate(1, 11),
-                        new Coordinate(0, 11),
-                        new Coordinate(1, 10),
-                        new Coordinate(2, 10)
+                        new Coordinate(1, 8),
+                        new Coordinate(0, 8),
+                        new Coordinate(1, 7),
+                        new Coordinate(2, 7)
                 };
                 blocks = this.blocksGenerator(tetraId, 6, coordinates);
                 break;
             case LINE_SHAPED:
                 coordinates = new Coordinate[]{
-                        new Coordinate(0, 10),
-                        new Coordinate(1, 10),
-                        new Coordinate(2, 10),
-                        new Coordinate(3, 10)
+                        new Coordinate(0, 7),
+                        new Coordinate(1, 7),
+                        new Coordinate(2, 7),
+                        new Coordinate(3, 7)
                 };
                 blocks = this.blocksGenerator(tetraId, 7, coordinates);
                 break;

@@ -6,4 +6,5 @@
     <item name="pause" type="id" />
     <item name="score" type="id" />
     <item name="difficulty" type="id" />
+    <item name="time" type="id" />
 </resources>

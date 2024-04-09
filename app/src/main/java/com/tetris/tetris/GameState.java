@@ -5,6 +5,7 @@ import android.util.SparseArray;
 class GameState {
 
     boolean status;
+    private boolean give_prize = false;
     int score;
     boolean pause;
     BasicBlock[][] board;
@@ -138,6 +139,19 @@ class GameState {
     void incrementScore() {
 
         this.score++;
+        if(score == 5)
+        {
+            give_prize = true;
+
+        }
+        isGivePoints();
+    }
+
+    public boolean isGivePrize() {
+        return give_prize;
+    }
+    public  int isGivePoints() {
+        return score;
     }
 
     void lineRemove() {
