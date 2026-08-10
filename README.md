@@ -1,5 +1,5 @@
 # Jakub-Oleksy
-Thesis for my bachelor (private)
+Thesis for my bachelor 
 - Flask code and ESP32 in branch "main"
 - Tetris app in branch "master"
 
