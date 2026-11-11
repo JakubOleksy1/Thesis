@@ -6,12 +6,8 @@
 
 using namespace std;
 
-
-/*const char* ssid = "Orange_Swiatlowod_FB10";
-const char* password = "grzempki12345";*/
-
-const char* ssid = "SAMSUNG Jakub";
-const char* password = "HasloSamsungKuba123";
+const char* ssid = "X";
+const char* password = "X";
 
 const char* serverGet = "http://JakubOleksy.pythonanywhere.com/actions";
 const char* serverPost = "http://JakubOleksy.pythonanywhere.com/action/add";
